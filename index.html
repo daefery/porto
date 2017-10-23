@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en" ng-app="ferde"> <!--<![endif]-->
 <head>
 
    <!--- basic page needs
@@ -31,7 +31,7 @@
 
 </head>
 
-<body id="top">
+<body id="top" ng-controller="BaseController">
 
 	<!-- header 
    ================================================== -->
@@ -51,7 +51,6 @@
 						<li><a class="smoothscroll"  href="#about" title="">About</a></li>
 						<li><a class="smoothscroll"  href="#resume" title="">Resume</a></li>
 						<li><a class="smoothscroll"  href="#portfolio" title="">Portfolio</a></li>
-						<li><a class="smoothscroll"  href="#services" title="">Services</a></li>					
 						<li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>	
 					</ul>
 				</nav>    		
@@ -70,28 +69,20 @@
    		<div class="row">
 
    			<div class="col-twelve">
-
 	   			<h5>Hello, Welcome.</h5>
-	   			<h1>I'm feryyp</h1>
+	   			<h1>I'm {{username}}</h1>
 
 	   			<p class="intro-position">
-	   				<span>Software Engineer</span>
-	   				<span>Business Analyst</span> 
-					<span>System Analyst</span> 
+	   				<span ng-repeat="x in position">{{x.name}}</span>
 	   			</p>
-
 	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
-
 	   		</div>  
    			
    		</div>   		 		
    	</div> <!-- /intro-content --> 
 
    	<ul class="intro-social">        
-         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+         <li ng-repeat="x in social"><a href="{{x.link}}" target="_blank"><i class="fa fa-{{x.icon}}"></i></a></li>
       </ul> <!-- /intro-social -->      	
 
    </section> <!-- /intro -->
@@ -108,12 +99,8 @@
    			<h1>Let me introduce myself.</h1>
 
    			<div class="intro-info">
-
    				<img src="images/profile.jpg" alt="Profile Picture">
-
-   				<p class="lead">I have a good working knowledge of many industry leading software applications such as Visual Studio, Sitecore, Sitefinity and SQLServer. I work to the highest standards and have an eye for detail with skills in development and organisation. Completing my course projects has taught me to provide originality and quality whilst successfully meeting deadlines. A versatile IT graduate, possessing strong motivational drive to succeed in the industry.
-
-Highly developed skills in problem identification and implementation of effective solutions. Comfortable with analysing and understanding data, working under time pressure and presenting myself in a professional manner. Excellent inter-personal communication and social skills built through extensive training with the so many culture. A friendly, mature and flexible individual with a proven entrepreneurial approach towards objectives and tasks.</p>
+   				<p class="lead">{{about_desc}}</p>
    			</div>   			
 
    		</div>   		
@@ -127,25 +114,9 @@ Highly developed skills in problem identification and implementation of effectiv
    				<h3>Profile</h3>
    				<hr>
 	   			<ul class="info-list">
-	   				<li>
-	   					<strong>Fullname:</strong>
-	   					<span>Fery Yundara Putera</span>
-	   				</li>
-	   				<li>
-	   					<strong>Birth Date:</strong>
-	   					<span>February 16, 1992</span>
-	   				</li>
-	   				<li>
-	   					<strong>Job:</strong>
-	   					<span>IT Professional, .Net Developer, Software Developer, Backend Developer</span>
-	   				</li>
-	   				<li>
-	   					<strong>Website:</strong>
-	   					<span>www.fyp.ferde.id</span>
-	   				</li>
-	   				<li>
-	   					<strong>Email:</strong>
-	   					<span>feryyundaraputera@gmail.com</span>
+	   				<li ng-repeat="x in profile">
+	   					<strong>{{x.label}}:</strong>
+	   					<span>{{x.value}}</span>
 	   				</li>
 
 	   			</ul> <!-- /info-list -->
@@ -155,29 +126,9 @@ Highly developed skills in problem identification and implementation of effectiv
    				<h3>PERSONAL QUALITIES</h3>
    				<hr>
 	   			<ul class="skill-bars">
-				   <li>
-				   	<div class="progress percent90"></div>
-				   	<strong>Confidence</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent85"></div>
-				   	<strong>Dedication</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent85"></div>
-				   	<strong>Accountable</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent80"></div>
-				   	<strong>Analytical</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent80"></div>
-				   	<strong>Diplomatic</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent85"></div>
-				   	<strong>Attentiveness</strong>
+				   <li ng-repeat="x in personal_quality">
+				   	<div class="progress percent{{x.value}}"></div>
+				   	<strong>{{x.name}}</strong>
 				   </li>
 				</ul>
    			</div>
@@ -186,13 +137,9 @@ Highly developed skills in problem identification and implementation of effectiv
    				<h3>Language</h3>
    				<hr>
 	   			<ul class="skill-bars">
-				   <li>
-				   	<div class="progress percent80"></div>
-				   	<strong>English</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent100"></div>
-				   	<strong>Bahasa</strong>
+				   <li ng-repeat="x in language">
+				   	<div class="progress percent{{x.value}}"></div>
+				   	<strong>{{x.name}}</strong>
 				   </li>
 				</ul>
    			</div>
@@ -203,69 +150,9 @@ Highly developed skills in problem identification and implementation of effectiv
    			<h3>Skills</h3>
    			<hr>
 			<ul class="skill-bars">
-			   <li>
-			   	<div class="progress percent90"></div>
-			   	<strong>C#</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent85"></div>
-			   	<strong>Javascript</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent80"></div>
-			   	<strong>AngularJS</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent90"></div>
-			   	<strong>ASP .NET MVC</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent75"></div>
-			   	<strong>SQL</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent75"></div>
-			   	<strong>Scrum</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent75"></div>
-			   	<strong>Business Analysis</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent75"></div>
-			   	<strong>Requirement Analysis</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent90"></div>
-			   	<strong>HTML5</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent85"></div>
-			   	<strong>Web Development</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent75"></div>
-			   	<strong>JQuery</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent75"></div>
-			   	<strong>PHP</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent85"></div>
-			   	<strong>Sitecore</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent85"></div>
-			   	<strong>Sitefinity</strong>
-			   </li>
-					<li>
-			   	<div class="progress percent90"></div>
-			   	<strong>GIT Workflow</strong>
-			   </li>
-			   <li>
-			   	<div class="progress percent85"></div>
-			   	<strong>JIRA</strong>
+			   <li ng-repeat="x in skills">
+			   	<div class="progress percent{{x.value}}"></div>
+			   	<strong>{{x.name}}</strong>
 			   </li>
 			</ul> <!-- /skill-bars -->	
    		</div>
@@ -275,7 +162,7 @@ Highly developed skills in problem identification and implementation of effectiv
    	<div class="row button-section">
    		<div class="col-twelve">
    			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
-   			<a href="#" title="Download CV" class="button button-primary">Download CV</a>
+   			<a href="cv.pdf" download="fery_cv" title="Download CV" class="button button-primary">Download CV</a>
    		</div>   		
    	</div>
 
@@ -309,71 +196,21 @@ Highly developed skills in problem identification and implementation of effectiv
 
    			<div class="timeline-wrap">
 
-   				<div class="timeline-block">
+   				<div class="timeline-block" ng-repeat="x in work_experience">
 
 	   				<div class="timeline-ico">
-	   					<img src="images/resume/xtremax.png">
+	   					<img ng-src="{{x.logo}}">
 	   					<!-- <i class="fa fa-briefcase"></i> -->
 	   				</div>
 
 	   				<div class="timeline-header">
-	   					<h3>Backend Developer</h3>
-	   					<p>August 2016 - Present</p>
+	   					<h3>{{x.job}}</h3>
+	   					<p>{{x.periode}}</p>
 	   				</div>
 
 	   				<div class="timeline-content">
-	   					<h4>Xtremax Indonesia</h4>
-	   					<ul class="disc">
-						   <li>Create and develop maintainable software beautifully.</li>
-						   <li>Work in teams to analyze and resolve software development problems.</li>
-						   <li>Create and simplify technical documentation.</li>
-						   <li>Recommend and build future upgrades based on analytical issues.</li>
-					   </ul>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<img src="images/resume/etak.png">
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Software Developer</h3>
-	   					<p>Jan 2015 - June 2016</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Elephant Talk Corp</h4>
-	   					<ul class="disc">
-						   <li>Updates job knowledge by researching new internet/intranet technologies and software products, participating in educational opportunities, reading professional publications, maintaining personal networks, participating in professional organization.</li>
-						   <li>Designs and develops user interfaces to Internet/intranet applications by setting expectations and features priorities throughout development life cycle, determining design methodologies and tool sets, completing programming using languages and software products, designing and conducting tests.</li>
-						   <li>Defines site objectives by analyzing user requirements, envisioning system features and functionality. Perform programming work associated with the onboarding of new clients, or the maintenance of current.</li>
-						   <li>Monitor and perform routine tests on an assigned system and report results, plus offer solutions and minimizes our exposure and risk on project.</li>
-					   </ul>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<img src="images/resume/suzuki.png">
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>.Net Developer</h3>
-	   					<p>Jan 2014 - Jan 2015</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>PT Suzuki Indomobil Motor</h4>
-	   					<ul class="disc">
-						   <li>Build web aplication for customers and sub-branch of suzuki.</li>
-						   <li>Learning about Suzuki framework for developing aplication.</li>
-						   <li>Team management training group.</li>
-						   <li>Research and analyze system need with current business process.</li>
+	   					<h4>{{x.company}}</h4>
+	   					<ul class="disc" ng-bind-html-unsafe="x.desc">
 					   </ul>
 	   				</div>
 
@@ -397,80 +234,22 @@ Highly developed skills in problem identification and implementation of effectiv
 
    			<div class="timeline-wrap">
 
-   				<div class="timeline-block">
+   				<div class="timeline-block" ng-repeat="x in education">
 
 	   				<div class="timeline-ico">
-	   					<img src="images/resume/binus.png">
+	   					<img ng-src="{{x.logo}}">
 	   				</div>
 
 	   				<div class="timeline-header">
-	   					<h3>Information System</h3>
-	   					<p>February 2014 - July 2017</p>
+	   					<h3>{{x.major}}</h3>
+	   					<p>{{x.periode}}</p>
 	   				</div>
 
 	   				<div class="timeline-content">
-	   					<h4>University of Bina Nusantara</h4>
+	   					<h4>{{x.campus}}</h4>
 	   					<div class="table-responsive">
-			      			<table>
-								  <tr>
-								    <th>GPA</th>
-								  </tr>
-								  <tr>
-								    <td>3.51</td>
-								  </tr>
-								  <tr>
-								    <th>Organization</th>
-								  </tr>
-								  <tr>
-								  	<td>
-								    	<ul class="disc">
-										   <li>HIMSISFO (Himpunan Mahasiswa Sistem Informasi). </li>
-										   <li>BNEC (BINA NUSANTARA English Club).</li>
-									   </ul>
-								    </td>
-								  </tr>
-							</table>
+			      			<table ng-bind-html-unsafe="x.desc"></table>
       					</div>   
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<img src="images/resume/telkom.png">
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Computer Engineering</h3>
-	   					<p>September 2010 - September 2013</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Telkom University</h4>
-	   					<div class="table-responsive">
-			      			<table>
-								  <tr>
-								    <th>GPA</th>
-								  </tr>
-								  <tr>
-								    <td>3.45</td>
-								  </tr>
-								  <tr>
-								    <th>Organization</th>
-								  </tr>
-								  <tr>
-								  	<td>
-								    	<ul class="disc">
-										   <li>Sentra Kegiatan Islam (SKI).</li>
-										   <li>Students English Club.</li>
-										   <li>UKM Basketball.</li>
-										   <li>UKM Soccer.</li>
-									   </ul>
-								    </td>
-								  </tr>
-							</table>
-      					</div>  
 	   				</div>
 
 	   			</div> <!-- /timeline-block -->
@@ -491,13 +270,7 @@ Highly developed skills in problem identification and implementation of effectiv
 
    		<div class="col-twelve">
 			<ul class="disc">
-			   <li><h3>Penetration Testing</h3><p>January 2017</p></li>
-			   <li><h3>Sharepoint Development</h3><p>November 2016</p></li>
-			   <li><h3>Enterprise System Development</h3><p>February 2014</p></li>
-			   <li><h3>Soft skill, Ethic, Commitment and Career Roadmap</h3><p>September 2013</p></li>
-			   <li><h3>Business Process and Requirement Analysis</h3><p>August 2013</p></li>
-			   <li><h3>Desktop Based System Development Using Java and SQL Service</h3><p>June 2013</p></li>
-			   <li><h3>Logical Analysis Enrichment</h3><p>May 2013</p></li>
+			   <li ng-repeat="x in training"><h3>{{x.name}}</h3><p>{{x.periode}}</p></li>
 		   </ul>
    		</div> <!-- /col-twelve -->
    		
@@ -513,7 +286,7 @@ Highly developed skills in problem identification and implementation of effectiv
 
    		<div class="col-twelve">
 			<ul class="disc">
-			   <li><h3>Certified Sitefinity Developer</h3><p>November 2016</p></li>
+			   <li ng-repeat="x in certified"><h3>{{x.name}}</h3><p>{{x.periode}}</p></li>
 		   </ul>
    		</div> <!-- /col-twelve -->
    		
@@ -544,321 +317,40 @@ Highly developed skills in problem identification and implementation of effectiv
    			<!-- portfolio-wrapper -->
 	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
 
-	         	<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/x-oneservice.png" alt="Liberty">
-	                  <a href="#modal-01" class="overlay">	                  	           
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-		     					       <h3 class="folio-title">Oneservice</h3>	     					    
-		     					    	 <span class="folio-types">
-		     					       	  Backend Developer
-		     					       </span>
-		     					   </div>	                      	
-	                     </div>                    
-	                  </a>
-	               </div>	               
-	        		</div> <!-- /folio-item -->
+	         	<div ng-repeat="x in projects">
+	         		
+	         		<div class="bgrid folio-item">
+		               <div class="item-wrap">
+		               	<img ng-src="{{x.img}}">
+		                  <a href="#modal-{{$index + 1}}" class="overlay">	                  	           
+		                     <div class="folio-item-table">
+		                     	<div class="folio-item-cell">
+	     					       <h3 class="folio-title">{{x.name}}</h3>	     					    
+	     					    	 <span class="folio-types">
+	     					       	  {{x.job}}
+	     					       </span>
+	     					   </div>	                      	
+		                     </div>                    
+		                  </a>
+		               </div>	               
+        			</div> <!-- /folio-item -->
 
-	        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/x-sicc.png" alt="Shutterbug">
-	               	<a href="#modal-02" class="overlay">              		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Singapore International Commercial Court</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Backend Developer
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/x-sup.png"alt="Clouds">
-	                  <a href="#modal-03" class="overlay">             		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Supreme Court</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Backend Developer
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/suzuki.png" alt="Beetle">
-	                  <a href="#modal-04" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Suzuki Dealer Management System</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  .Net Developer
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-        		</div> <!-- /folio-item -->
-
-        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/scm.jpg" alt="Beetle">
-	                  <a href="#modal-05" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">E-SCM</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Business Analysis, System Analysis, Fullstack Developer
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-        		</div> <!-- /folio-item -->
-
-        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/selfcare.jpg" alt="Beetle">
-	                  <a href="#modal-06" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Self Care</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Software Developer
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-        		</div> <!-- /folio-item -->
-
-        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/wedding.jpg" alt="Beetle">
-	                  <a href="#modal-07" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Ferde Wedding</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Fullstack Developer
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-        		</div> <!-- /folio-item -->
-
-        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/csr.jpg" alt="Beetle">
-	                  <a href="#modal-08" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">CSR</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Software Developer
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-        		</div> <!-- /folio-item -->    
-
-	            <!-- modal popups - begin
-	            ============================================================= -->
-	            <div id="modal-01" class="popup-modal slider mfp-hide">	
-
+					<div id="modal-{{$index + 1}}" class="popup-modal slider mfp-hide">	
 				     	<div class="media">
-				     		<img src="images/portfolio/modals/x-oneservice.png" alt="" />
+				     		<img ng-src="{{x.img}}" />
 				     	</div>      	
-
 					   <div class="description-box">
-					      <h4>Oneservice</h4>		      
-					      <p>OneService refers to a community of government agencies, Town Councils and citizens working together to address municipal matters and improve
-							the living environment for all. OneService also captures the mission of the Municipal Services Office (MSO) which aims to improve the Government’s
-							coordination of municipal services and promote community partnerships and civic responsibility to improve the living environment.</p>
-							<p>Build with : C#,	MVC, Sitecore.</p>
-
-					      <div class="categories">Backend Developer</div>			               
+					      <h4>{{x.name}}</h4>		      
+					      <div ng-bind-html-unsafe="x.desc"></div>
+					      <div class="categories">{{x.job}}</div>			               
 					   </div>
-
 			         <div class="link-box">
-			            <a href="https://oneservice.sg" target="_blank">Details</a>
+			            <a href="{{x.link}}" target="_blank">Details</a>
 					      <a href="#" class="popup-modal-dismiss">Close</a>
 			         </div>		      
+				   </div> <!-- /modal-item -->
 
-				   </div> <!-- /modal-01 -->
-
-				   <div id="modal-02" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/x-sicc.png" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Singapore International Commercial Court</h4>		      
-					      <p>Building on the success of Singapore’s arbitration sector, the SICC seeks to further boost Singapore’s value as a leading forum for legal services and international commercial dispute resolution, offering litigants the option of having their disputes adjudicated by a panel of experienced judges comprising specialist commercial judges from Singapore and international judges from both civil law and common law traditions.</p>
-
-					      <div class="categories">Backend Developer</div>			               
-					   </div>
-
-			         <div class="link-box">
-			            <a href="http://www.sicc.gov.sg/" target="_blank">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-02 -->
-
-				   <div id="modal-03" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/x-sup.png" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Supreme Court</h4>		      
-					      <p>The Supreme Court consists of the High Court and the Court of Appeal and hears both criminal and civil cases.</p>
-						  <p>Build with : C#,	ASP .NET, Sitefinity.</p>
-
-					      <div class="categories">Backend Developer</div>			               
-					   </div>
-
-			         <div class="link-box">
-			            <a href="https://www.supremecourt.gov.sg/" target="_blank">Details</a>
-				     	<a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-03 -->
-
-				   <div id="modal-04" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/suzuki.png" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Suzuki Dealer Management System</h4>		      
-			      			<ul class="disc">
-	      				       <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>Developed using Suzuki own semi SAP framework, with C# MVC4 .NET, Angular.js. Interfaces CSS3, Boostrap, Kendo. And Sql Server for Database.</p></li>
-							   <li><p>Responsible on module Master Service, Receiving Sparepart, ClosePeriod Sparepart, Utility Sparepart.</p></li>
-						   </ul>								
-					      <div class="categories">.Net Developer</div>			               
-					   </div>
-
-			         <div class="link-box">
-				      	<a href="#" class="popup-modal-dismiss">Details</a>
-				      	<a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-04 -->
-
-				   <div id="modal-05" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/scm.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>E-SCM</h4>		      
-			      			<ul class="disc">
-	      				       <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>Developed using Suzuki own semi SAP framework, with C# MVC4 .NET, Angular.js. Interfaces CSS3, Boostrap, Kendo. And Sql Server for Database.</p></li>
-							   <li><p>Responsible on module Master Service, Receiving Sparepart, ClosePeriod Sparepart, Utility Sparepart.</p></li>
-						   </ul>								
-					      <div class="categories">.Net Developer</div>			               
-					   </div>
-
-			         <div class="link-box">
-				      	<a href="#" class="popup-modal-dismiss">Details</a>
-				      	<a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-04 -->
-
-				   <div id="modal-06" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/selfcare.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Self Care</h4>		      
-			      			<ul class="disc">
-	      				       <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>Developed using Suzuki own semi SAP framework, with C# MVC4 .NET, Angular.js. Interfaces CSS3, Boostrap, Kendo. And Sql Server for Database.</p></li>
-							   <li><p>Responsible on module Master Service, Receiving Sparepart, ClosePeriod Sparepart, Utility Sparepart.</p></li>
-						   </ul>								
-					      <div class="categories">.Net Developer</div>			               
-					   </div>
-
-			         <div class="link-box">
-				      	<a href="#" class="popup-modal-dismiss">Details</a>
-				      	<a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-04 -->
-
-				   <div id="modal-07" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/wedding.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>Ferde Wedding</h4>		      
-			      			<ul class="disc">
-	      				       <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>Developed using Suzuki own semi SAP framework, with C# MVC4 .NET, Angular.js. Interfaces CSS3, Boostrap, Kendo. And Sql Server for Database.</p></li>
-							   <li><p>Responsible on module Master Service, Receiving Sparepart, ClosePeriod Sparepart, Utility Sparepart.</p></li>
-						   </ul>								
-					      <div class="categories">.Net Developer</div>			               
-					   </div>
-
-			         <div class="link-box">
-				      	<a href="#" class="popup-modal-dismiss">Details</a>
-				      	<a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-04 -->
-
-				   <div id="modal-08" class="popup-modal slider mfp-hide">	
-
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/csr.jpg" alt="" />
-				     	</div>      	
-
-					   <div class="description-box">
-					      <h4>CSR</h4>		      
-			      			<ul class="disc">
-	      				       <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>SDMS Web is a dealer application that to process all of transaction such sales, receiving , etc vehicle like motor bike and car all over Indonesia.</p></li>
-							   <li><p>Developed using Suzuki own semi SAP framework, with C# MVC4 .NET, Angular.js. Interfaces CSS3, Boostrap, Kendo. And Sql Server for Database.</p></li>
-							   <li><p>Responsible on module Master Service, Receiving Sparepart, ClosePeriod Sparepart, Utility Sparepart.</p></li>
-						   </ul>								
-					      <div class="categories">.Net Developer</div>			               
-					   </div>
-
-			         <div class="link-box">
-				      	<a href="#" class="popup-modal-dismiss">Details</a>
-				      	<a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
-
-				   </div> <!-- /modal-04 -->
-				   <!-- modal popups - end
-	            ============================================================= -->
+	         	</div>
 
 	         </div> <!-- /portfolio-wrapper --> 
 
@@ -867,134 +359,6 @@ Highly developed skills in problem identification and implementation of effectiv
    	</div> <!-- /portfolio-content --> 
 		
 	</section> <!-- /portfolio --> 
-
-	<!-- services Section
-   ================================================== -->
-	<section id="services">
-
-		<div class="overlay"></div>
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Services</h5>
-   			<h1>What Can I Do For You?</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-   		</div>   		
-   	</div> <!-- /section-intro -->
-
-   	<div class="row services-content">
-
-   		<div id="owl-slider" class="owl-carousel services-list">
-
-	      	<div class="service">	
-
-	      		<span class="icon"><i class="icon-earth"></i></span>            
-
-	            <div class="service-content">	
-
-	            	 <h3>Webdesign</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>
-	         		
-	         	</div> 	         	 
-
-				</div> <!-- /service -->
-
-				<div class="service">	
-
-					<span class="icon"><i class="icon-window"></i></span>                          
-
-	            <div class="service-content">	
-
-	            	<h3>Web Development</h3>  
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>
-
-	            </div>	                          
-
-			   </div> <!-- /service -->
-
-			   <div class="service">
-
-			   	<span class="icon"><i class="icon-paint-brush"></i></span>		            
-
-	            <div class="service-content">
-
-	            	<h3>Branding</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
-
-	            </div> 	            	               
-
-			   </div> <!-- /service -->
-
-				<div class="service">
-
-					<span class="icon"><i class="icon-toggles"></i></span>	              
-
-	            <div class="service-content">
-
-	            	<h3>UI/UX Design</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p> 
-	         		
-	            </div>                
-
-				</div> <!-- /service -->
-
-			   <div class="service">
-
-			   	<span class="icon"><i class="icon-image"></i></span>	            
-
-	            <div class="service-content">
-
-	            	<h3>Graphics Design</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
-
-	            </div>	               
-
-			   </div> <!-- /service -->
-
-			   <div class="service">
-
-			   	<span class="icon"><i class="icon-chat"></i></span>	   	           
-
-	            <div class="service-content">
-
-	            	 <h3>Consultancy</h3>
-
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
-	        			
-	            </div>	               
-
-			   </div> <!-- /service -->
-
-	      </div> <!-- /services-list -->
-   		
-   	</div> <!-- /services-content -->
-		
-	</section> <!-- /services -->	
-
-
-	<!-- stats Section
-   ================================================== -->
-	<section id="stats" class="count-up">
-
-		
-
-	</section> <!-- /stats -->
-
-	
    <!-- contact
    ================================================== -->
 	<section id="contact">
@@ -1048,10 +412,7 @@ Highly developed skills in problem identification and implementation of effectiv
      		<div class="col-six tab-full pull-right social">
 
      			<ul class="footer-social">        
-			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-			      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+	         		<li ng-repeat="x in social"><a href="{{x.link}}" target="_blank"><i class="fa fa-{{x.icon}}"></i></a></li>
 			   </ul> 
 	      		
 	      </div>
@@ -1076,6 +437,9 @@ Highly developed skills in problem identification and implementation of effectiv
    <!-- Java Script
    ================================================== --> 
    <script src="js/jquery-2.1.3.min.js"></script>
+   <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js" ng:autobind></script> -->
+   <script src="js/angular-1.0.0.js" ng:autobind></script>
+   <script src="js/app.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
 

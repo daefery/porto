@@ -118,14 +118,16 @@
 	/*----------------------------------------------------*/
 	/*	Modal Popup
 	------------------------------------------------------*/
-   $('.item-wrap a').magnificPopup({
+   $(document).ready(function() {
+	   $('.item-wrap a').magnificPopup({
 
-      type:'inline',
-      fixedContentPos: false,
-      removalDelay: 300,
-      showCloseBtn: false,
-      mainClass: 'mfp-fade'
+	      type:'inline',
+	      fixedContentPos: false,
+	      removalDelay: 300,
+	      showCloseBtn: false,
+	      mainClass: 'mfp-fade'
 
+	   });	
    });
 
    $(document).on('click', '.popup-modal-dismiss', function (e) {
