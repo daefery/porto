@@ -198,34 +198,38 @@ app.controller("BaseController", function($scope) {
 			img:"images/portfolio/scm.jpg",
 			job:"Business Analysis, System Analysis, Fullstack Developer",
 			name:"E-SCM",
-			desc:"<p>The Supreme Court consists of the High Court and the Court of Appeal and hears both criminal and civil cases.</p>"+
-			  "<p>Build with : C#,	ASP .NET, Sitefinity.</p>",
+			desc:"<p>E-SCM system to help company to manage their distribution flow better than before and also help strengthen the"+
+				"company’s relationship with their bussiness partners. The methods used were System Development Life Cycle"+
+				"(SDLC) to analyze the details of current system which currently handle the company’s business process. Lean"+
+				"SCM also being used to develop a newer supply chain management scheme as a reference object in creating a"+
+				"new set of strategies related to inventory management and optimization of suppliers network.</p>",
 			link:""
 		},
 		{
 			img:"images/portfolio/selfcare.jpg",
 			job:"Software Developer",
 			name:"Self Care",
-			desc:"<p>The Supreme Court consists of the High Court and the Court of Appeal and hears both criminal and civil cases.</p>"+
-			  "<p>Build with : C#,	ASP .NET, Sitefinity.</p>",
+			desc:"<p>The Supreme Court consists of the High Court and the Court of Appeal and hears both criminal and civil cases."+
+			"The assigned task is researching the user authentication which uses MembershipReboot (deal with how to create secure login), creating template page, implementing the result of reseach, refactoring, defect fixing. This project is very challenging because this the first time for me to implement many new technologies and combine it.</p>",
 			link:""
 		},
 		{
 			img:"images/portfolio/wedding.jpg",
 			job:"Fullstack Developer",
 			name:"Ferde Wedding",
-			desc:"<p>The Supreme Court consists of the High Court and the Court of Appeal and hears both criminal and civil cases.</p>"+
-			  "<p>Build with : C#,	ASP .NET, Sitefinity.</p>",
+			desc:"<p>Wedding</p>",
 			link:""
 		},
 		{
 			img:"images/portfolio/csr.jpg",
 			job:"Software Developer",
 			name:"CSR",
-			desc:"<p>The Supreme Court consists of the High Court and the Court of Appeal and hears both criminal and civil cases.</p>"+
-			  "<p>Build with : C#,	ASP .NET, Sitefinity.</p>",
+			desc:"<p>ET CSR is to be used in a call center, particularly by MVNO (Mobile Virtual Network Operator) Service Desk. Those system built as the generic system which means it can be used by many MVNOs."+
+			"The assigned task is researching the user authentication which uses MembershipReboot (deal with how to create secure login), creating template page, implementing the result of reseach, refactoring, defect fixing. This project is very challenging because this the first time for me to implement many new technologies and combine it.</p>",
 			link:""
 		}
 	];
+
+	$scope.interest = "I loved to collaborate with team to find and solve the problem, that satisfy my self when the problem is solved and we can delivery the project successfully. Sometime I really enjoy to explore new technology to develop my skills. Last but not least, I also make my self comfortable in work environment with my hobbies such as music, gaming, socialize, reading and sports.";
 
 });
