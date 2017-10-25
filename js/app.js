@@ -158,7 +158,7 @@ app.controller("BaseController", function($scope) {
 
 	$scope.projects=[
 		{
-			img:"images/portfolio/x-oneservice.png",
+			img:"images/portfolio/x-oneservice.jpg",
 			job:"Backend Developer",
 			name:"OneService",
 			desc:"<p>OneService refers to a community of government agencies, Town Councils and citizens working together to address municipal matters and improve"+
@@ -168,14 +168,14 @@ app.controller("BaseController", function($scope) {
 			link:""
 		},
 		{
-			img:"images/portfolio/x-sicc.png",
+			img:"images/portfolio/x-sicc.jpg",
 			job:"Backend Developer",
 			name:"Singapore International Commercial Court",
 			desc:"<p>Building on the success of Singapore’s arbitration sector, the SICC seeks to further boost Singapore’s value as a leading forum for legal services and international commercial dispute resolution, offering litigants the option of having their disputes adjudicated by a panel of experienced judges comprising specialist commercial judges from Singapore and international judges from both civil law and common law traditions.</p>",
 			link:""
 		},
 		{
-			img:"images/portfolio/x-sup.png",
+			img:"images/portfolio/x-sup.jpg",
 			job:"Backend Developer",
 			name:"Supreme Court",
 			desc:"<p>The Supreme Court consists of the High Court and the Court of Appeal and hears both criminal and civil cases.</p>"+
@@ -183,7 +183,7 @@ app.controller("BaseController", function($scope) {
 			link:""
 		},
 		{
-			img:"images/portfolio/suzuki.png",
+			img:"images/portfolio/suzuki.jpg",
 			job:".Net Developer",
 			name:"Suzuki Dealer Management System",
 			desc:"<ul class=\"disc\">"+
