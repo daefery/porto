@@ -209,17 +209,17 @@ app.controller("BaseController", function($scope) {
 			img:"images/portfolio/selfcare.jpg",
 			job:"Software Developer",
 			name:"Self Care",
-			desc:"<p>The Supreme Court consists of the High Court and the Court of Appeal and hears both criminal and civil cases."+
+			desc:"<p>ET SelfCare is one of service that let subscribers self-manage their subscriptions and accounts."+
 			"The assigned task is researching the user authentication which uses MembershipReboot (deal with how to create secure login), creating template page, implementing the result of reseach, refactoring, defect fixing. This project is very challenging because this the first time for me to implement many new technologies and combine it.</p>",
 			link:""
 		},
-		{
-			img:"images/portfolio/wedding.jpg",
-			job:"Fullstack Developer",
-			name:"Ferde Wedding",
-			desc:"<p>Wedding</p>",
-			link:""
-		},
+		// {
+		// 	img:"images/portfolio/wedding.jpg",
+		// 	job:"Fullstack Developer",
+		// 	name:"Ferde Wedding",
+		// 	desc:"<p>Wedding</p>",
+		// 	link:""
+		// },
 		{
 			img:"images/portfolio/csr.jpg",
 			job:"Software Developer",
