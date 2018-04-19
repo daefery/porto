@@ -65,30 +65,33 @@ app.controller("BaseController", function($scope) {
 			job:"Backend Developer",
 			periode:"August 2016 - Present",
 			company:"Xtremax Indonesia",
-			desc:"<li>Create and develop maintainable software beautifully.</li>"+
-			   "<li>Work in teams to analyze and resolve software development problems.</li>"+
-			   "<li>Create and simplify technical documentation.</li>"+
-			   "<li>Recommend and build future upgrades based on analytical issues.</li>"
+			desc:"<li>Provided continued maintenance and development of bug fixes and patch sets for existing web applications.</li>"+
+			   "<li>Developed and implemented complex Internet and Intranet applications on multiple platforms.</li>"+
+			   "<li>Established compatibility with third party software products by developing program for modification and integration.</li>"+
+			   "<li>Designed strategic plan for component development practices to support future projects.</li>"+
+			   "<li>Recommended architectural improvements, design solutions and integration solutions.</li>"
 		},
 		{
 			logo:"images/resume/etak.png",
 			job:"Software Developer",
 			periode:"January 2015 - June 2016",
 			company:"Elephant Talk Corp",
-			desc:"<li>Updates job knowledge by researching new internet/intranet technologies and software products, participating in educational opportunities, reading professional publications, maintaining personal networks, participating in professional organization.</li>"+
-			   "<li>Designs and develops user interfaces to Internet/intranet applications by setting expectations and features priorities throughout development life cycle, determining design methodologies and tool sets, completing programming using languages and software products, designing and conducting tests.</li>"+
-			   "<li>Defines site objectives by analyzing user requirements, envisioning system features and functionality. Perform programming work associated with the onboarding of new clients, or the maintenance of current.</li>"+
-			   "<li>Monitor and perform routine tests on an assigned system and report results, plus offer solutions and minimizes our exposure and risk on project.</li>"
+			desc:"<li>Implemented innovative systems for data collection, storage and management of customer orders.</li>"+
+			   "<li>Maintained existing applications and designed and delivered new applications.</li>"+
+			   "<li>Engineered configuration server in c# to reconfigure Mobile Number Portability .</li>"+
+			   "<li>Evaluated potential software products based on new and existing system development and migration requirements.</li>"+
+			   "<li>Developed object-oriented software, including CSR & Self Care.</li>"
 		},
 		{
 			logo:"images/resume/suzuki.png",
 			job:".Net Developer",
 			periode:"January 2014 - January 2015",
 			company:"PT Suzuki Indomobil Motor",
-			desc:"<li>Build web aplication for customers and sub-branch of suzuki.</li>"+
-			   "<li>Learning about Suzuki framework for developing aplication.</li>"+
-			   "<li>Team management training group.</li>"+
-			   "<li>Research and analyze system need with current business process.</li>"
+			desc:"<li>Collaborated with product management to design, build and test systems.</li>"+
+			   "<li>Maintained existing applications and designed and delivered new applications.</li>"+
+			   "<li>Debugged and modified software components.</li>"+
+			   "<li>Modified existing software to correct errors, adapt to new hardware and improve performance.</li>"+
+			   "<li>Developed object-oriented software, including Suzuki Dealer Management System(SDMS).</li>"
 		},
 	];
 
